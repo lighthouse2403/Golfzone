@@ -41,7 +41,6 @@ class BaseAPI<T:Configuration> {
         let dataTask = URLSession.shared.dataTask(with: request as URLRequest,
                                                   completionHandler: { data, response, error in
             DispatchQueue.main.async {
-                
                 /// Detect error
                 guard error == nil else {
                     completionHandler(.failure(ServiceError.server_error))

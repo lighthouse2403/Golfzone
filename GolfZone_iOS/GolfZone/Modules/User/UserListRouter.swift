@@ -13,11 +13,11 @@ class UserListRouter: PresenterToRouterUserListProtocol {
     func showScreen() {
         let destinationVC = self.createModule()
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-              let window = appDelegate.window,
-              let rootController = window.rootViewController else {
+              let window = appDelegate.window else {
             return
         }
-        rootController.present(destinationVC, animated: true)
+        window.rootViewController = UINavigationController.init(rootViewController: destinationVC)
+        window.makeKeyAndVisible()
     }
     
     // MARK: Static methods
@@ -26,13 +26,15 @@ class UserListRouter: PresenterToRouterUserListProtocol {
         let viewController = storyboard.instantiateViewController(viewControllerType:UserListViewController.self)
         
         let presenter: ViewToPresenterUserListProtocol & InteractorToPresenterUserListProtocol = UserListPresenter()
-        
+        let entity: InteractorToEntityUserListProtocol = UserListEntity()
+
         viewController.presenter = presenter
         viewController.presenter?.router = UserListRouter()
         viewController.presenter?.view = viewController
         viewController.presenter?.interactor = UserListInteractor()
         viewController.presenter?.interactor?.presenter = presenter
-        
+        viewController.presenter?.interactor?.entity = entity
+
         return viewController
     }
 }

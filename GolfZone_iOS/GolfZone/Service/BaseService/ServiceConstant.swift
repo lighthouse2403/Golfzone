@@ -8,12 +8,7 @@
 import Foundation
 
 struct Constant {
-    struct Server {
-        static let baseAPIURL = Configs.share.env.baseURL
-        static let baseURL = Configs.share.env.accountURL
-        static let baseStaticURL = Configs.share.env.staticURL
-        static let websocketURL = Configs.share.env.socketBaseURL
-    }
+    static let baseURL = "https://jsonplaceholder.typicode.com/"
 }
 
 enum Header: String {

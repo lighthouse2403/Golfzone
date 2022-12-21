@@ -13,8 +13,16 @@ class UserListPresenter: ViewToPresenterUserListProtocol {
     var view: PresenterToViewUserListProtocol?
     var interactor: PresenterToInteractorUserListProtocol?
     var router: PresenterToRouterUserListProtocol?
+    
+    func loadData() {
+        view?.showLoading()
+        interactor?.getUserList()
+    }
 }
 
 extension UserListPresenter: InteractorToPresenterUserListProtocol {
-    
+    func reloadData(data: [UserDetail]) {
+        view?.reloadData(data: data)
+        view?.hideLoading()
+    }
 }

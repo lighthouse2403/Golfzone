@@ -11,4 +11,19 @@ import Foundation
 class UserListInteractor: PresenterToInteractorUserListProtocol {
     // MARK: Properties
     var presenter: InteractorToPresenterUserListProtocol?
+    var entity: InteractorToEntityUserListProtocol?
+    var userList: [UserDetail]?
+
+    func getUserList() {
+        entity?.getUser(completionHandler: { [weak self] result in
+            guard let `self` = self else { return }
+            switch result {
+            case .success(let users):
+                self.userList = users
+                self.presenter?.reloadData(data: users)
+            case .failure(_):
+                self.presenter?.reloadData(data: [])
+            }
+        })
+    }
 }
