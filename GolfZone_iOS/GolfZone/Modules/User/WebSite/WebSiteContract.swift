@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewWebSiteProtocol {
-   
+    func loadUrl(url: URL)
 }
 
 // MARK: View Input (View -> Presenter)
@@ -18,6 +18,7 @@ protocol ViewToPresenterWebSiteProtocol {
     var view: PresenterToViewWebSiteProtocol? { get set }
     var interactor: PresenterToInteractorWebSiteProtocol? { get set }
     var router: PresenterToRouterWebSiteProtocol? { get set }
+    func loadUrl()
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)

@@ -34,6 +34,13 @@ class UserDetailPresenter: ViewToPresenterUserDetailProtocol {
         }
         router?.showWebSite(url: url)
     }
+    
+    func sendEmail() {
+        guard let email = interactor?.user?.email else {
+            return
+        }
+        view?.sendEmail(email: email)
+    }
 }
 
 extension UserDetailPresenter: InteractorToPresenterUserDetailProtocol {

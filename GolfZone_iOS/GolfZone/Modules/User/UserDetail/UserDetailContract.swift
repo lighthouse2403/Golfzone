@@ -12,6 +12,7 @@ import Foundation
 protocol PresenterToViewUserDetailProtocol {
     func setupUserDetail(user: UserDetail)
     func callPhoneNumber(number: String)
+    func sendEmail(email: String)
 }
 
 // MARK: View Input (View -> Presenter)
@@ -22,6 +23,7 @@ protocol ViewToPresenterUserDetailProtocol {
     func viewDidLoad()
     func callPhoneNumber()
     func showWebSite()
+    func sendEmail()
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)

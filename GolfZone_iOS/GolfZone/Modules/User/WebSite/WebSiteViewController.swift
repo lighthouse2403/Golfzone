@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import WebKit
 
 class WebSiteViewController: BaseViewController {
+    // MARK: - Properties
+    var presenter: ViewToPresenterWebSiteProtocol?
+    @IBOutlet weak var webView: WKWebView!
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    // MARK: - Properties
-    var presenter: ViewToPresenterWebSiteProtocol?
-    
+    override func setupUI() {
+        addTitle(title: "Web Site")
+    }
 }
 
 extension WebSiteViewController: PresenterToViewWebSiteProtocol{
-    // TODO: Implement View Output Methods
+    func loadUrl(url: URL) {
+        webView.load(URLRequest.init(url: url))
+    }
 }

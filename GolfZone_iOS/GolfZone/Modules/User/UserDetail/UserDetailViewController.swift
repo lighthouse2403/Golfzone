@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import MessageUI
 
 class UserDetailViewController: BaseViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneNumberButton: UIButton!
     @IBOutlet weak var webSiteButton: UIButton!
     @IBOutlet weak var companyNameLabel: UILabel!
+    @IBOutlet weak var emailButton: UIButton!
     @IBOutlet weak var addressLabel: UILabel!
     var presenter: ViewToPresenterUserDetailProtocol?
 
@@ -27,6 +28,7 @@ class UserDetailViewController: BaseViewController {
         presenter?.viewDidLoad()
     }
     
+    // MARK: Action
     @IBAction func callPhoneNumber(_ sender: UIButton) {
         presenter?.callPhoneNumber()
     }
@@ -34,9 +36,26 @@ class UserDetailViewController: BaseViewController {
     @IBAction func showWebSite(_ sender: UIButton) {
         presenter?.showWebSite()
     }
+    
+    @IBAction func sendEmail(_ sender: Any) {
+        presenter?.sendEmail()
+    }
 }
 
-extension UserDetailViewController: PresenterToViewUserDetailProtocol{
+extension UserDetailViewController: PresenterToViewUserDetailProtocol {
+    func sendEmail(email: String) {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients([email])
+            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
+
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
+    }
+    
     func callPhoneNumber(number: String) {
         if let url = NSURL(string: "tel://\(number)") as? URL, UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url as URL)
@@ -47,13 +66,19 @@ extension UserDetailViewController: PresenterToViewUserDetailProtocol{
         addTitle(title: "User Detail")
         userNameLabel.text = user.username
         nameLabel.text = user.name
-        emailLabel.text = user.email
         companyNameLabel.text = user.company?.name
         phoneNumberButton.setTitle(user.phone, for: .normal)
         webSiteButton.setTitle(user.website, for: .normal)
+        emailButton.setTitle(user.email, for: .normal)
 
         let street = user.address?.street ?? ""
         let city = user.address?.city ?? ""
         addressLabel.text = "\(street) - \(city)"
+    }
+}
+
+extension UserDetailViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 }

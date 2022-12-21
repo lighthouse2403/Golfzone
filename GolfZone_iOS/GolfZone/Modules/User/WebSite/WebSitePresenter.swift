@@ -13,6 +13,12 @@ class WebSitePresenter: ViewToPresenterWebSiteProtocol {
     var view: PresenterToViewWebSiteProtocol?
     var interactor: PresenterToInteractorWebSiteProtocol?
     var router: PresenterToRouterWebSiteProtocol?
+    
+    func loadUrl() {
+        guard let urlString = interactor?.url,
+              let url = URL.init(string: urlString) else { return }
+        view?.loadUrl(url: url)
+    }
 }
 
 extension WebSitePresenter: InteractorToPresenterWebSiteProtocol {
