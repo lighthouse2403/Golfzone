@@ -44,15 +44,12 @@ class UserDetailViewController: BaseViewController {
 
 extension UserDetailViewController: PresenterToViewUserDetailProtocol {
     func sendEmail(email: String) {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients([email])
-            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-
-            present(mail, animated: true)
-        } else {
-            // show failure alert
+        if let url = URL(string: "mailto:\(email)") {
+          if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url)
+          } else {
+            UIApplication.shared.openURL(url)
+          }
         }
     }
     
@@ -74,11 +71,5 @@ extension UserDetailViewController: PresenterToViewUserDetailProtocol {
         let street = user.address?.street ?? ""
         let city = user.address?.city ?? ""
         addressLabel.text = "\(street) - \(city)"
-    }
-}
-
-extension UserDetailViewController: MFMailComposeViewControllerDelegate {
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true)
     }
 }
