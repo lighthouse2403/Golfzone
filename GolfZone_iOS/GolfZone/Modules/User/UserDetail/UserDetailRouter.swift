@@ -37,4 +37,8 @@ class UserDetailRouter: PresenterToRouterUserDetailProtocol {
 
         return viewController
     }
+    
+    func showWebSite(url: String) {
+        WebSiteRouter().showScreen(url: url)
+    }
 }

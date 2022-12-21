@@ -138,6 +138,9 @@
                                                                 <state key="normal">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="callPhoneNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lbb-A3-En7"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -167,6 +170,9 @@
                                                                 <state key="normal">
                                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showWebSite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5hI-X9-yNv"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>

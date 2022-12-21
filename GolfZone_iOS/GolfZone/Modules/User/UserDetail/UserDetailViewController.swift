@@ -26,9 +26,23 @@ class UserDetailViewController: BaseViewController {
     override func setupUI() {
         presenter?.viewDidLoad()
     }
+    
+    @IBAction func callPhoneNumber(_ sender: UIButton) {
+        presenter?.callPhoneNumber()
+    }
+    
+    @IBAction func showWebSite(_ sender: UIButton) {
+        presenter?.showWebSite()
+    }
 }
 
 extension UserDetailViewController: PresenterToViewUserDetailProtocol{
+    func callPhoneNumber(number: String) {
+        if let url = NSURL(string: "tel://\(number)") as? URL, UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url as URL)
+        }
+    }
+    
     func setupUserDetail(user: UserDetail) {
         addTitle(title: "User Detail")
         userNameLabel.text = user.username

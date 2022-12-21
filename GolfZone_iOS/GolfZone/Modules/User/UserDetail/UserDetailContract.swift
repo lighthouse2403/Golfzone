@@ -11,6 +11,7 @@ import Foundation
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewUserDetailProtocol {
     func setupUserDetail(user: UserDetail)
+    func callPhoneNumber(number: String)
 }
 
 // MARK: View Input (View -> Presenter)
@@ -19,6 +20,8 @@ protocol ViewToPresenterUserDetailProtocol {
     var interactor: PresenterToInteractorUserDetailProtocol? { get set }
     var router: PresenterToRouterUserDetailProtocol? { get set }
     func viewDidLoad()
+    func callPhoneNumber()
+    func showWebSite()
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
@@ -33,4 +36,5 @@ protocol InteractorToPresenterUserDetailProtocol {
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterUserDetailProtocol {
+    func showWebSite(url: String)
 }

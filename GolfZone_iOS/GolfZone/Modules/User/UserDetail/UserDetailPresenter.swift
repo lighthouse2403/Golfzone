@@ -20,6 +20,20 @@ class UserDetailPresenter: ViewToPresenterUserDetailProtocol {
         }
         view?.setupUserDetail(user: user)
     }
+    
+    func callPhoneNumber() {
+        guard let phone = interactor?.user?.phone else {
+            return
+        }
+        view?.callPhoneNumber(number: phone)
+    }
+    
+    func showWebSite() {
+        guard let url = interactor?.user?.website else {
+            return
+        }
+        router?.showWebSite(url: url)
+    }
 }
 
 extension UserDetailPresenter: InteractorToPresenterUserDetailProtocol {

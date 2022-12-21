@@ -68,6 +68,12 @@
 		88935BF5295373C700EAA3E5 /* UserDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935BF1295373C700EAA3E5 /* UserDetail.swift */; };
 		88935BF7295376C600EAA3E5 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935BF6295376C600EAA3E5 /* UserEntity.swift */; };
 		88935BF929537AFE00EAA3E5 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935BF829537AFE00EAA3E5 /* BaseViewProtocol.swift */; };
+		88935C012953962D00EAA3E5 /* WebSite.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88935BFB2953962D00EAA3E5 /* WebSite.storyboard */; };
+		88935C022953962D00EAA3E5 /* WebSiteContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935BFC2953962D00EAA3E5 /* WebSiteContract.swift */; };
+		88935C032953962D00EAA3E5 /* WebSitePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935BFD2953962D00EAA3E5 /* WebSitePresenter.swift */; };
+		88935C042953962D00EAA3E5 /* WebSiteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935BFE2953962D00EAA3E5 /* WebSiteRouter.swift */; };
+		88935C052953962D00EAA3E5 /* WebSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935BFF2953962D00EAA3E5 /* WebSiteViewController.swift */; };
+		88935C062953962D00EAA3E5 /* WebSiteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935C002953962D00EAA3E5 /* WebSiteInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +159,12 @@
 		88935BF1295373C700EAA3E5 /* UserDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetail.swift; sourceTree = "<group>"; };
 		88935BF6295376C600EAA3E5 /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
 		88935BF829537AFE00EAA3E5 /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
+		88935BFB2953962D00EAA3E5 /* WebSite.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebSite.storyboard; sourceTree = "<group>"; };
+		88935BFC2953962D00EAA3E5 /* WebSiteContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteContract.swift; sourceTree = "<group>"; };
+		88935BFD2953962D00EAA3E5 /* WebSitePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSitePresenter.swift; sourceTree = "<group>"; };
+		88935BFE2953962D00EAA3E5 /* WebSiteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteRouter.swift; sourceTree = "<group>"; };
+		88935BFF2953962D00EAA3E5 /* WebSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteViewController.swift; sourceTree = "<group>"; };
+		88935C002953962D00EAA3E5 /* WebSiteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSiteInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +269,7 @@
 		88935B79295350F700EAA3E5 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				88935BFA295395FA00EAA3E5 /* WebSite */,
 				88935BD829536D5400EAA3E5 /* UserDetail */,
 				88935BD129536C5A00EAA3E5 /* Cell */,
 				88935B7C2953513B00EAA3E5 /* UserList.storyboard */,
@@ -411,6 +424,19 @@
 			path = UserService;
 			sourceTree = "<group>";
 		};
+		88935BFA295395FA00EAA3E5 /* WebSite */ = {
+			isa = PBXGroup;
+			children = (
+				88935BFB2953962D00EAA3E5 /* WebSite.storyboard */,
+				88935BFC2953962D00EAA3E5 /* WebSiteContract.swift */,
+				88935BFD2953962D00EAA3E5 /* WebSitePresenter.swift */,
+				88935BFE2953962D00EAA3E5 /* WebSiteRouter.swift */,
+				88935BFF2953962D00EAA3E5 /* WebSiteViewController.swift */,
+				88935C002953962D00EAA3E5 /* WebSiteInteractor.swift */,
+			);
+			path = WebSite;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -522,6 +548,7 @@
 				88935B822953513B00EAA3E5 /* UserList.storyboard in Resources */,
 				88935B5129534E6D00EAA3E5 /* Assets.xcassets in Resources */,
 				88935BDF29536D7200EAA3E5 /* UserDetail.storyboard in Resources */,
+				88935C012953962D00EAA3E5 /* WebSite.storyboard in Resources */,
 				88935B942953680600EAA3E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,11 +582,15 @@
 				88935B862953513B00EAA3E5 /* UserListViewController.swift in Sources */,
 				88935BC329536AD400EAA3E5 /* SlackLoadingAnimator.swift in Sources */,
 				88935BBC29536AD400EAA3E5 /* CRRefreshProtocol.swift in Sources */,
+				88935C052953962D00EAA3E5 /* WebSiteViewController.swift in Sources */,
+				88935C042953962D00EAA3E5 /* WebSiteRouter.swift in Sources */,
 				88935BD029536AD400EAA3E5 /* CRRefreshBundle.swift in Sources */,
 				88935BD629536C7F00EAA3E5 /* UserTableViewCell.swift in Sources */,
 				88935B872953513B00EAA3E5 /* UserListInteractor.swift in Sources */,
 				88935B4C29534E6C00EAA3E5 /* UserListController.swift in Sources */,
+				88935C022953962D00EAA3E5 /* WebSiteContract.swift in Sources */,
 				88935BC929536AD400EAA3E5 /* FastCircleLayer.swift in Sources */,
+				88935C062953962D00EAA3E5 /* WebSiteInteractor.swift in Sources */,
 				88935BF929537AFE00EAA3E5 /* BaseViewProtocol.swift in Sources */,
 				88935B7B2953511D00EAA3E5 /* UIStoryboardExtension.swift in Sources */,
 				88935BE829536F0D00EAA3E5 /* BaseViewController.swift in Sources */,
@@ -574,6 +605,7 @@
 				88935BE629536E4600EAA3E5 /* UIColorExtension.swift in Sources */,
 				88935BC629536AD400EAA3E5 /* FastLayer.swift in Sources */,
 				88935BC129536AD400EAA3E5 /* RamotionWaveLayer.swift in Sources */,
+				88935C032953962D00EAA3E5 /* WebSitePresenter.swift in Sources */,
 				88935BF2295373C700EAA3E5 /* UserServiceConfiguration.swift in Sources */,
 				88935BF5295373C700EAA3E5 /* UserDetail.swift in Sources */,
 				88935B962953689D00EAA3E5 /* UITableViewExtension.swift in Sources */,
