@@ -19,12 +19,14 @@ protocol ViewToPresenterUserListProtocol {
     var interactor: PresenterToInteractorUserListProtocol? { get set }
     var router: PresenterToRouterUserListProtocol? { get set }
     func loadData()
+    func showUserDetail(indexPath: IndexPath)
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorUserListProtocol {
     var presenter: InteractorToPresenterUserListProtocol? { get set }
     var entity: InteractorToEntityUserListProtocol? { get set }
+    var userList: [UserDetail]? { get set }
     func getUserList()
 }
 
@@ -35,6 +37,7 @@ protocol InteractorToPresenterUserListProtocol {
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterUserListProtocol {
+    func showUserDetail(user: UserDetail)
 }
 
 protocol InteractorToEntityUserListProtocol {

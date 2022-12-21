@@ -38,4 +38,14 @@ extension UIColor {
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
+    
+    func navBarImage() -> UIImage {
+        UIGraphicsBeginImageContext(CGSize.init(width: 1, height: 88))
+        guard let ctx = UIGraphicsGetCurrentContext() else { return UIImage() }
+        self.setFill()
+        ctx.fill(CGRect(x: 0, y: 0, width: 1, height: 88))
+        guard let image = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
+        UIGraphicsEndImageContext()
+        return image
+    }
 }

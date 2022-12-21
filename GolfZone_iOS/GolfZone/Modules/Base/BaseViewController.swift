@@ -11,17 +11,14 @@ class BaseViewController: UIViewController {
     private let rightButton = UIButton(type: .custom)
     private var loadingView = UIView()
     private let spinnerView = SpinnerView()
-    private var isShowUnderLineColor: Bool = true
-
-    private var currentCoinId: String?
     
     override func viewDidLoad() {
+        setupNavigationbarColor()
         setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,12 +37,26 @@ class BaseViewController: UIViewController {
     }
 
     func setupNavigationBar(title: String = "",
-                            titleLeftItem: String?,
-                            isShowUnderLineColor: Bool = true) {
+                            titleLeftItem: String?) {
         self.title = title
         addLeftBarItem(imageName: "ico_back", selectedImage: "ico_back", title: "")
     }
    
+    func setupNavigationbarColor() {
+        guard let navigationBar = navigationController?.navigationBar else {return}
+
+        if #available(iOS 15.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundImage = UIColor.white.navBarImage()
+            appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+            navigationItem.standardAppearance = appearance
+            navigationItem.scrollEdgeAppearance = appearance
+        } else {
+            navigationBar.setBackgroundImage(UIColor.white.navBarImage(), for: .default)
+        }
+    }
+    
     func addLeftBarItem(imageName: String, selectedImage: String, title: String) {
         let leftButton = UIButton.init(type: UIButton.ButtonType.custom)
         leftButton.isExclusiveTouch = true

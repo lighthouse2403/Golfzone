@@ -10,7 +10,7 @@ import Foundation
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewUserDetailProtocol {
-   
+    func setupUserDetail(user: UserDetail)
 }
 
 // MARK: View Input (View -> Presenter)
@@ -18,11 +18,13 @@ protocol ViewToPresenterUserDetailProtocol {
     var view: PresenterToViewUserDetailProtocol? { get set }
     var interactor: PresenterToInteractorUserDetailProtocol? { get set }
     var router: PresenterToRouterUserDetailProtocol? { get set }
+    func viewDidLoad()
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
 protocol PresenterToInteractorUserDetailProtocol {
     var presenter: InteractorToPresenterUserDetailProtocol? { get set }
+    var user: UserDetail? { get set }
 }
 
 // MARK: Interactor Output (Interactor -> Presenter)

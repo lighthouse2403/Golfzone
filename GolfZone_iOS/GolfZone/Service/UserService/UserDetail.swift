@@ -6,7 +6,7 @@ struct UserDetail: Codable {
     var name: String?
     var username: String?
     var email: String?
-    var address: String?
+    var address: Address?
     var phone: String?
     var website: String?
     var company: Company?
@@ -28,7 +28,7 @@ struct UserDetail: Codable {
         name = try container.decode(String.self, forKey: .name)
         username = try container.decode(String.self, forKey: .username)
         email = try container.decode(String.self, forKey: .email)
-        address = try container.decode(String.self, forKey: .address)
+        address = try container.decode(Address.self, forKey: .address)
         phone = try container.decode(String.self, forKey: .phone)
         website = try container.decode(String.self, forKey: .website)
         company = try container.decode(Company.self, forKey: .company)

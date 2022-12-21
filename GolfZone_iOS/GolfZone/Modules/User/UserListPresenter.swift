@@ -18,6 +18,11 @@ class UserListPresenter: ViewToPresenterUserListProtocol {
         view?.showLoading()
         interactor?.getUserList()
     }
+    
+    func showUserDetail(indexPath: IndexPath) {
+        guard let userList = interactor?.userList else { return }
+        router?.showUserDetail(user: userList[indexPath.row])
+    }
 }
 
 extension UserListPresenter: InteractorToPresenterUserListProtocol {

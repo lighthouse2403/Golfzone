@@ -10,16 +10,20 @@ import UIKit
 
 class UserDetailViewController: BaseViewController {
     
+    // MARK: - Properties
+    var presenter: ViewToPresenterUserDetailProtocol?
+
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    // MARK: - Properties
-    var presenter: ViewToPresenterUserDetailProtocol?
     
+    override func setupUI() {
+    }
 }
 
 extension UserDetailViewController: PresenterToViewUserDetailProtocol{
-    // TODO: Implement View Output Methods
+    func setupUserDetail(user: UserDetail) {
+        addTitle(title: user.name)
+    }
 }

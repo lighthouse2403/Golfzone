@@ -16,7 +16,8 @@ class UserListRouter: PresenterToRouterUserListProtocol {
               let window = appDelegate.window else {
             return
         }
-        window.rootViewController = UINavigationController.init(rootViewController: destinationVC)
+        let rootNavigation = UINavigationController.init(rootViewController: destinationVC)
+        window.rootViewController = rootNavigation
         window.makeKeyAndVisible()
     }
     
@@ -36,5 +37,9 @@ class UserListRouter: PresenterToRouterUserListProtocol {
         viewController.presenter?.interactor?.entity = entity
 
         return viewController
+    }
+    
+    func showUserDetail(user: UserDetail) {
+        UserDetailRouter().showScreen(user: user)
     }
 }

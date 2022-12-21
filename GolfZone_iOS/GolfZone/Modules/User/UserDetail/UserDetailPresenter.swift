@@ -13,6 +13,13 @@ class UserDetailPresenter: ViewToPresenterUserDetailProtocol {
     var view: PresenterToViewUserDetailProtocol?
     var interactor: PresenterToInteractorUserDetailProtocol?
     var router: PresenterToRouterUserDetailProtocol?
+    
+    func viewDidLoad() {
+        guard let user = interactor?.user else {
+            return
+        }
+        view?.setupUserDetail(user: user)
+    }
 }
 
 extension UserDetailPresenter: InteractorToPresenterUserDetailProtocol {

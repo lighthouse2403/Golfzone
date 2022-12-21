@@ -20,6 +20,11 @@ class UserListViewController: BaseViewController {
         presenter?.loadData()
     }
     
+    override func setupUI() {
+        setupTable()
+        addTitle(title: "Users")
+    }
+    
     func setupTable() {
         tableViewDataSource = BaseTableViewDataSource(hasPull: false,
                                                   hasLoadMore: false,
@@ -32,16 +37,13 @@ class UserListViewController: BaseViewController {
     // MARK: - TableView delegate, datasource
     private func setupCell(indexPath: IndexPath, dataItem: Any, cell: UITableViewCell) {
         // TODO: Setup UI for cell
-        if let userCell = cell as? UserTableViewCell {
-           userCell.setupCell(object: dataItem)
-        }
+        guard let userCell = cell as? UserTableViewCell else { return }
+        userCell.setupCell(object: dataItem)
     }
     
     private func didSelectedCell(_ dataItem: Any, _ cell: UITableViewCell) {
-        guard let indexPath = dataItem as? IndexPath,
-              let userList = tableViewDataSource?.dataArray.first else { return }
-        let user = userList[indexPath.row]
-        
+        guard let indexPath = dataItem as? IndexPath else { return }
+        presenter?.showUserDetail(indexPath: indexPath)
     }
 }
 

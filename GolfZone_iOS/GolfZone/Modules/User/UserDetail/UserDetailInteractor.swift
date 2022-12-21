@@ -9,6 +9,8 @@
 import Foundation
 
 class UserDetailInteractor: PresenterToInteractorUserDetailProtocol {
+    var user: UserDetail?
+    
     // MARK: Properties
     var presenter: InteractorToPresenterUserDetailProtocol?
 }
