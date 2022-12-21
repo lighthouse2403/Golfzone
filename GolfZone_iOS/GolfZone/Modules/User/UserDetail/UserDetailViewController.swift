@@ -9,8 +9,13 @@
 import UIKit
 
 class UserDetailViewController: BaseViewController {
-    
-    // MARK: - Properties
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneNumberButton: UIButton!
+    @IBOutlet weak var webSiteButton: UIButton!
+    @IBOutlet weak var companyNameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
     var presenter: ViewToPresenterUserDetailProtocol?
 
     // MARK: - Lifecycle Methods
@@ -19,11 +24,22 @@ class UserDetailViewController: BaseViewController {
     }
     
     override func setupUI() {
+        presenter?.viewDidLoad()
     }
 }
 
 extension UserDetailViewController: PresenterToViewUserDetailProtocol{
     func setupUserDetail(user: UserDetail) {
-        addTitle(title: user.name)
+        addTitle(title: "User Detail")
+        userNameLabel.text = user.username
+        nameLabel.text = user.name
+        emailLabel.text = user.email
+        companyNameLabel.text = user.company?.name
+        phoneNumberButton.setTitle(user.phone, for: .normal)
+        webSiteButton.setTitle(user.website, for: .normal)
+
+        let street = user.address?.street ?? ""
+        let city = user.address?.city ?? ""
+        addressLabel.text = "\(street) - \(city)"
     }
 }

@@ -48,7 +48,7 @@ class BaseViewController: UIViewController {
         if #available(iOS 15.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundImage = UIColor.white.navBarImage()
+            appearance.backgroundImage = UIColor(hexString: "#9DD2E9").navBarImage()
             appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
             navigationItem.standardAppearance = appearance
             navigationItem.scrollEdgeAppearance = appearance
