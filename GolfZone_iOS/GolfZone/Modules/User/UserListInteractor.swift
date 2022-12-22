@@ -21,8 +21,8 @@ class UserListInteractor: PresenterToInteractorUserListProtocol {
             case .success(let users):
                 self.userList = users
                 self.presenter?.reloadData(data: users)
-            case .failure(_):
-                self.presenter?.reloadData(data: [])
+            case .failure(let error):
+                self.presenter?.showError(error: error)
             }
         })
     }

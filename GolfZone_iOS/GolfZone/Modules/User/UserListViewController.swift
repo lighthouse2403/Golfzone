@@ -57,4 +57,10 @@ extension UserListViewController: PresenterToViewUserListProtocol {
     func reloadData(data: [UserDetail]) {
         tableViewDataSource?.dataArray = [data]
     }
+    
+    func showError(error: ServiceError) {
+        tableViewDataSource?.dataArray = []
+        tableView.cr.endHeaderRefresh()
+        tableView.setNoDataView(content: error.message)
+    }
 }

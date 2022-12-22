@@ -43,7 +43,9 @@ class BaseAPI<T:Configuration> {
             DispatchQueue.main.async {
                 /// Detect error
                 guard error == nil else {
-                    completionHandler(.failure(ServiceError.server_error))
+                    let message = error?.localizedDescription ?? ""
+                    let code = (error as? NSError)?.code ?? 500
+                    completionHandler(.failure(ServiceError(issueCode: code, message: message)))
                     return
                 }
                 guard let existData = data, let httpResponse = response as? HTTPURLResponse else {
@@ -51,11 +53,10 @@ class BaseAPI<T:Configuration> {
                     return
                 }
                 
-                guard let json = try? JSONSerialization.jsonObject(with: existData, options: []) else {
+                guard (try? JSONSerialization.jsonObject(with: existData, options: [])) != nil else {
                     completionHandler(.failure(ServiceError.json_invalid))
                     return
                 }
-                print("Response: \(json)")
                 
                 guard self.isSuccess(httpResponse.statusCode) else {
                     guard let error = self.getFailedServiceError(existData) else {

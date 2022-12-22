@@ -59,7 +59,7 @@ extension UITableView {
         let label   = UILabel()
         label.text  = content
         label.font  = UIFont.systemFont(ofSize: 16)
-        label.textColor = .gray
+        label.textColor = .darkGray
         label.textAlignment  = .center
         view.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false

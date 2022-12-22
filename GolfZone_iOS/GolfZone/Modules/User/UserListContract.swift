@@ -10,7 +10,8 @@ import Foundation
 
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewUserListProtocol: BaseViewProtocol {
-   func reloadData(data: [UserDetail])
+    func reloadData(data: [UserDetail])
+    func showError(error: ServiceError)
 }
 
 // MARK: View Input (View -> Presenter)
@@ -33,6 +34,7 @@ protocol PresenterToInteractorUserListProtocol {
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterUserListProtocol {
     func reloadData(data: [UserDetail])
+    func showError(error: ServiceError)
 }
 
 // MARK: Router Input (Presenter -> Router)

@@ -30,4 +30,9 @@ extension UserListPresenter: InteractorToPresenterUserListProtocol {
         view?.reloadData(data: data)
         view?.hideLoading()
     }
+    
+    func showError(error: ServiceError) {
+        view?.hideLoading()
+        view?.showError(error: error)
+    }
 }
