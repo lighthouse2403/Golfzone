@@ -21,7 +21,7 @@ class SpinnerView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         layer.fillColor = nil
-        layer.strokeColor = UIColor.lightGray.withAlphaComponent(0.6).cgColor
+        layer.strokeColor = UIColor(hexString: "9DD2E9").withAlphaComponent(0.6).cgColor
         setPath()
     }
     

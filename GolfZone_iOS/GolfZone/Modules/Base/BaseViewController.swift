@@ -131,7 +131,7 @@ extension BaseViewController {
         spinnerView.lineWidth(5)
         
         let containerView = UIView()
-        containerView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        containerView.backgroundColor = UIColor.white.withAlphaComponent(0.6)
         containerView.layer.cornerRadius = 8
         
         if loadingView.isDescendant(of: view) {
