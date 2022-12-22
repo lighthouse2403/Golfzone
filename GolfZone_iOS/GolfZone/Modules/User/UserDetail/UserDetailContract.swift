@@ -24,6 +24,7 @@ protocol ViewToPresenterUserDetailProtocol {
     func callPhoneNumber()
     func showWebSite()
     func sendEmail()
+    func displayLocation()
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)
@@ -39,4 +40,5 @@ protocol InteractorToPresenterUserDetailProtocol {
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterUserDetailProtocol {
     func showWebSite(url: String)
+    func displayLocation(address: Address)
 }

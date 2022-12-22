@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8883F3932953EB03006BFFBC /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8883F38D2953EB03006BFFBC /* MapView.storyboard */; };
+		8883F3942953EB03006BFFBC /* MapViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8883F38E2953EB03006BFFBC /* MapViewContract.swift */; };
+		8883F3952953EB03006BFFBC /* MapViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8883F38F2953EB03006BFFBC /* MapViewPresenter.swift */; };
+		8883F3962953EB03006BFFBC /* MapViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8883F3902953EB03006BFFBC /* MapViewRouter.swift */; };
+		8883F3972953EB03006BFFBC /* MapViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8883F3912953EB03006BFFBC /* MapViewViewController.swift */; };
+		8883F3982953EB03006BFFBC /* MapViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8883F3922953EB03006BFFBC /* MapViewInteractor.swift */; };
+		8883F39A2953EDF4006BFFBC /* AddressAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8883F3992953EDF4006BFFBC /* AddressAnnotation.swift */; };
 		88935B4829534E6C00EAA3E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935B4729534E6C00EAA3E5 /* AppDelegate.swift */; };
 		88935B4C29534E6C00EAA3E5 /* UserListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88935B4B29534E6C00EAA3E5 /* UserListController.swift */; };
 		88935B5129534E6D00EAA3E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88935B5029534E6D00EAA3E5 /* Assets.xcassets */; };
@@ -94,6 +101,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8883F38D2953EB03006BFFBC /* MapView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapView.storyboard; sourceTree = "<group>"; };
+		8883F38E2953EB03006BFFBC /* MapViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewContract.swift; sourceTree = "<group>"; };
+		8883F38F2953EB03006BFFBC /* MapViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewPresenter.swift; sourceTree = "<group>"; };
+		8883F3902953EB03006BFFBC /* MapViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRouter.swift; sourceTree = "<group>"; };
+		8883F3912953EB03006BFFBC /* MapViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewViewController.swift; sourceTree = "<group>"; };
+		8883F3922953EB03006BFFBC /* MapViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewInteractor.swift; sourceTree = "<group>"; };
+		8883F3992953EDF4006BFFBC /* AddressAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAnnotation.swift; sourceTree = "<group>"; };
 		88935B4429534E6C00EAA3E5 /* GolfZone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GolfZone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88935B4729534E6C00EAA3E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88935B4B29534E6C00EAA3E5 /* UserListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListController.swift; sourceTree = "<group>"; };
@@ -192,6 +206,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8883F38C2953EADD006BFFBC /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				8883F38D2953EB03006BFFBC /* MapView.storyboard */,
+				8883F38E2953EB03006BFFBC /* MapViewContract.swift */,
+				8883F38F2953EB03006BFFBC /* MapViewPresenter.swift */,
+				8883F3902953EB03006BFFBC /* MapViewRouter.swift */,
+				8883F3912953EB03006BFFBC /* MapViewViewController.swift */,
+				8883F3922953EB03006BFFBC /* MapViewInteractor.swift */,
+				8883F3992953EDF4006BFFBC /* AddressAnnotation.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
 		88935B3B29534E6C00EAA3E5 = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				88935B992953698900EAA3E5 /* Base */,
+				8883F38C2953EADD006BFFBC /* MapView */,
 				88935B79295350F700EAA3E5 /* User */,
 			);
 			path = Modules;
@@ -549,6 +578,7 @@
 				88935B5129534E6D00EAA3E5 /* Assets.xcassets in Resources */,
 				88935BDF29536D7200EAA3E5 /* UserDetail.storyboard in Resources */,
 				88935C012953962D00EAA3E5 /* WebSite.storyboard in Resources */,
+				8883F3932953EB03006BFFBC /* MapView.storyboard in Resources */,
 				88935B942953680600EAA3E5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +610,7 @@
 				88935BCB29536AD400EAA3E5 /* NormalHeaderAnimator.swift in Sources */,
 				88935BE129536D7200EAA3E5 /* UserDetailPresenter.swift in Sources */,
 				88935B862953513B00EAA3E5 /* UserListViewController.swift in Sources */,
+				8883F3952953EB03006BFFBC /* MapViewPresenter.swift in Sources */,
 				88935BC329536AD400EAA3E5 /* SlackLoadingAnimator.swift in Sources */,
 				88935BBC29536AD400EAA3E5 /* CRRefreshProtocol.swift in Sources */,
 				88935C052953962D00EAA3E5 /* WebSiteViewController.swift in Sources */,
@@ -601,6 +632,7 @@
 				88935B9B2953699A00EAA3E5 /* BaseTableViewDataSource.swift in Sources */,
 				88935BBB29536AD400EAA3E5 /* CRRefreshExtension.swift in Sources */,
 				88935BC429536AD400EAA3E5 /* WCLLoadingView.swift in Sources */,
+				8883F39A2953EDF4006BFFBC /* AddressAnnotation.swift in Sources */,
 				88935BF3295373C700EAA3E5 /* UserAPI.swift in Sources */,
 				88935BE629536E4600EAA3E5 /* UIColorExtension.swift in Sources */,
 				88935BC629536AD400EAA3E5 /* FastLayer.swift in Sources */,
@@ -609,6 +641,7 @@
 				88935BF2295373C700EAA3E5 /* UserServiceConfiguration.swift in Sources */,
 				88935BF5295373C700EAA3E5 /* UserDetail.swift in Sources */,
 				88935B962953689D00EAA3E5 /* UITableViewExtension.swift in Sources */,
+				8883F3962953EB03006BFFBC /* MapViewRouter.swift in Sources */,
 				88935B98295368D300EAA3E5 /* NSObjectExtension.swift in Sources */,
 				88935BC029536AD400EAA3E5 /* RamotionAnimator.swift in Sources */,
 				88935B842953513B00EAA3E5 /* UserListPresenter.swift in Sources */,
@@ -618,9 +651,12 @@
 				88935BE329536D7200EAA3E5 /* UserDetailViewController.swift in Sources */,
 				88935BE229536D7200EAA3E5 /* UserDetailRouter.swift in Sources */,
 				88935BE429536D7200EAA3E5 /* UserDetailInteractor.swift in Sources */,
+				8883F3982953EB03006BFFBC /* MapViewInteractor.swift in Sources */,
 				88935BCF29536AD400EAA3E5 /* CRRefreshComponent.swift in Sources */,
 				88935BCE29536AD400EAA3E5 /* CRRefreshAnimator.swift in Sources */,
 				88935BE029536D7200EAA3E5 /* UserDetailContract.swift in Sources */,
+				8883F3942953EB03006BFFBC /* MapViewContract.swift in Sources */,
+				8883F3972953EB03006BFFBC /* MapViewViewController.swift in Sources */,
 				88935B4829534E6C00EAA3E5 /* AppDelegate.swift in Sources */,
 				88935B8D295352A300EAA3E5 /* BaseService.swift in Sources */,
 				88935BC729536AD400EAA3E5 /* FastArrowLayer.swift in Sources */,

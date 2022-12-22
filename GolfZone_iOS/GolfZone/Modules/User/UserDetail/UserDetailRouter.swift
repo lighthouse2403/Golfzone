@@ -41,4 +41,8 @@ class UserDetailRouter: PresenterToRouterUserDetailProtocol {
     func showWebSite(url: String) {
         WebSiteRouter().showScreen(url: url)
     }
+    
+    func displayLocation(address: Address) {
+        MapViewRouter().showScreen(address: address)
+    }
 }

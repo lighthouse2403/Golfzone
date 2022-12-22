@@ -41,6 +41,13 @@ class UserDetailPresenter: ViewToPresenterUserDetailProtocol {
         }
         view?.sendEmail(email: email)
     }
+    
+    func displayLocation() {
+        guard let address = interactor?.user?.address else {
+            return
+        }
+        router?.displayLocation(address: address)
+    }
 }
 
 extension UserDetailPresenter: InteractorToPresenterUserDetailProtocol {

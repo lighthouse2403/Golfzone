@@ -228,13 +228,16 @@
                                                                     <constraint firstAttribute="width" constant="1" id="ReN-u5-pWp"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHe-Nc-8Wr">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqE-oe-01U">
                                                                 <rect key="frame" x="77" y="0.0" width="317" height="50"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal">
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="showLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aNb-41-h61"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -271,7 +274,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addressLabel" destination="fHe-Nc-8Wr" id="f5D-jO-Gzx"/>
+                        <outlet property="addressButton" destination="PqE-oe-01U" id="ahC-IT-QSM"/>
                         <outlet property="companyNameLabel" destination="UtG-nj-1AF" id="0Nd-Y6-Gjx"/>
                         <outlet property="emailButton" destination="gyP-da-1qe" id="gf5-wm-l0y"/>
                         <outlet property="nameLabel" destination="XE5-fJ-MqX" id="jIh-Kq-fRx"/>

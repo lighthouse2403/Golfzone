@@ -16,7 +16,7 @@ class UserDetailViewController: BaseViewController {
     @IBOutlet weak var webSiteButton: UIButton!
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var emailButton: UIButton!
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var addressButton: UIButton!
     var presenter: ViewToPresenterUserDetailProtocol?
 
     // MARK: - Lifecycle Methods
@@ -35,6 +35,10 @@ class UserDetailViewController: BaseViewController {
     
     @IBAction func showWebSite(_ sender: UIButton) {
         presenter?.showWebSite()
+    }
+    
+    @IBAction func showLocation(_ sender: UIButton) {
+        presenter?.displayLocation()
     }
     
     @IBAction func sendEmail(_ sender: Any) {
@@ -70,6 +74,6 @@ extension UserDetailViewController: PresenterToViewUserDetailProtocol {
 
         let street = user.address?.street ?? ""
         let city = user.address?.city ?? ""
-        addressLabel.text = "\(street) - \(city)"
+        addressButton.setTitle("\(street) - \(city)", for: .normal)
     }
 }
