@@ -26,11 +26,12 @@ class UserListViewController: BaseViewController {
     }
     
     func setupTable() {
-        tableViewDataSource = BaseTableViewDataSource(hasPull: false,
+        tableViewDataSource = BaseTableViewDataSource(hasPull: true,
                                                   hasLoadMore: false,
                                                   tableView: self.tableView)
         tableViewDataSource?.setupCell = setupCell(indexPath:dataItem:cell:)
         tableViewDataSource?.didSelectRow = didSelectedCell(_:_:)
+        tableViewDataSource?.pullToRefreshData = pullToRefresh
         tableViewDataSource?.noDataMessage = "No User"
     }
     
@@ -44,6 +45,10 @@ class UserListViewController: BaseViewController {
     private func didSelectedCell(_ dataItem: Any, _ cell: UITableViewCell) {
         guard let indexPath = dataItem as? IndexPath else { return }
         presenter?.showUserDetail(indexPath: indexPath)
+    }
+    
+    private func pullToRefresh() {
+        presenter?.loadData()
     }
 }
 

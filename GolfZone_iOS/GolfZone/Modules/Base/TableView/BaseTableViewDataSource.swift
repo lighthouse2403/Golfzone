@@ -27,7 +27,9 @@ class BaseTableViewDataSource<TableViewCell: BaseTableViewCell>: NSObject, UITab
                     self.removeNoDataView()
                 }
             }
+            tableView.cr.endHeaderRefresh()
             tableView.reloadData()
+            
         }
     }
     var didSelectRow: ((_ dataItem: IndexPath, _ cell: UITableViewCell) -> Void)?

@@ -14,8 +14,7 @@ class MapViewViewController: BaseViewController {
     @IBOutlet weak var mapView: MKMapView!
     // MARK: - Properties
     var presenter: ViewToPresenterMapViewProtocol?
-    let locationManager =  CLLocationManager()
-    let currentPin = MKPointAnnotation()
+    private let locationManager =  CLLocationManager()
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -51,7 +50,6 @@ extension MapViewViewController: PresenterToViewMapViewProtocol{
 
 extension MapViewViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        mapView.removeAnnotation(currentPin)
         presenter?.pinLocation()
     }
 }
