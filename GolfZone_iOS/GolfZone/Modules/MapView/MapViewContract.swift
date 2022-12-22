@@ -19,6 +19,7 @@ protocol ViewToPresenterMapViewProtocol {
     var interactor: PresenterToInteractorMapViewProtocol? { get set }
     var router: PresenterToRouterMapViewProtocol? { get set }
     func pinLocation()
+    func getMapViewTitle() -> String
 }
 
 // MARK: Interactor Input (Presenter -> Interactor)

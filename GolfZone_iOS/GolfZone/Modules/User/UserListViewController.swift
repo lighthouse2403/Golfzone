@@ -22,7 +22,7 @@ class UserListViewController: BaseViewController {
     
     override func setupUI() {
         setupTable()
-        addTitle(title: "Users")
+        addTitle(title: "User List")
     }
     
     func setupTable() {

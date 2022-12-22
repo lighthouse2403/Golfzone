@@ -26,6 +26,11 @@ class MapViewPresenter: ViewToPresenterMapViewProtocol {
         let annotation = AddressAnnotation.init(title: address.street, info: address.suite, coordinate: coordinate)
         view?.addAnnotation(annotation: annotation)
     }
+    
+    func getMapViewTitle() -> String {
+        guard let address = interactor?.address else { return ""}
+        return address.street ?? ""
+    }
 }
 
 extension MapViewPresenter: InteractorToPresenterMapViewProtocol {
